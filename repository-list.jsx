@@ -5,6 +5,7 @@ var Repository = require('./repository');
 var actions = require('./actions');
 
 var RepositoryList = React.createClass({
+
   addRepository: function(){
     var repositoryName = this.refs.repositoryName.value;
     this.props.dispatch(actions.addRepository(repositoryName));
@@ -25,6 +26,7 @@ var RepositoryList = React.createClass({
 });
 
 var mapStateToProps = function(state, props){
+  console.log(state, props, 'from mapStateToProps');
   return {
     repositories: state
   };
